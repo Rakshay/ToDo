@@ -1,0 +1,22 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Simple basic javascript TODO app",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rakshay/ToDo.git"
+  },
+  "author": "Akshay Valiya Rakkanchath",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rakshay/ToDo/issues"
+  },
+  "homepage": "https://github.com/Rakshay/ToDo#readme"
+}
