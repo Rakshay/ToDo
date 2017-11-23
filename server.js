@@ -9,9 +9,9 @@ import path from 'path';
 import nconf from 'nconf';
 import logger from './lib/services/logger';
 import middleware from './lib/middleware';
+import Routes from './lib/routes';
 
 const buildDir = path.join(__dirname, 'public', 'assets');
-const port = 3000;
 const port = nconf.get('port');
 const app = express();
 
@@ -29,6 +29,8 @@ app.use(methodOverride());
 app.set('port', port);
 app.use(favicon(path.join(buildDir, 'favicon.ico')));
 app.use(express.static(path.join(process.cwd(), 'public')));
+
+Routes.attach(app);
 
 app.use((req, res) => {
   res.sendFile(path.join(buildDir, 'index.html'));
