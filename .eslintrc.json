@@ -34,5 +34,9 @@
     }],
     "react/jsx-uses-vars": "error",
     "react/jsx-indent": "off"
+  },
+  "globals": {
+    "process": true,
+    "__dirname": false
   }
 }

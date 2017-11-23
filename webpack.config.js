@@ -1,13 +1,11 @@
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 const path = require('path');
 
-module.exports = env => {
+module.exports = () => {
   var publicFldrPath = path.join(__dirname, 'public'),
       buildFldrPath = path.join(publicFldrPath, 'assets'),
       buildSrcFldrPath = path.join(publicFldrPath, 'src'),
-      nodeModulesPath = path.join(__dirname, 'node_modules'),
       plugins = [];
 
   plugins.push(new HtmlWebpackPlugin({
@@ -16,7 +14,7 @@ module.exports = env => {
     inject: 'body'
   }));
   plugins.push(new WebpackCleanupPlugin({
-    exclude: ['css/**/*', '**/*.html']
+    exclude: ['css/**/*', '**/*.html', 'favicon.ico']
   }));
 
   return {
