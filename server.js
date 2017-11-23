@@ -6,11 +6,13 @@ import favicon from 'serve-favicon';
 import methodOverride from 'method-override';
 import compression from 'compression';
 import path from 'path';
+import nconf from 'nconf';
 import logger from './lib/services/logger';
 import middleware from './lib/middleware';
 
 const buildDir = path.join(__dirname, 'public', 'assets');
 const port = 3000;
+const port = nconf.get('port');
 const app = express();
 
 app.use(morgan('dev', {
