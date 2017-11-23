@@ -10,10 +10,13 @@ import nconf from 'nconf';
 import logger from './lib/services/logger';
 import middleware from './lib/middleware';
 import Routes from './lib/routes';
+import mongoose from './lib/services/mongoose';
 
 const buildDir = path.join(__dirname, 'public', 'assets');
 const port = nconf.get('port');
 const app = express();
+
+mongoose.init(nconf.get('mongoDb'));
 
 app.use(morgan('dev', {
   stream: logger.stream
