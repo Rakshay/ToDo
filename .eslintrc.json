@@ -37,6 +37,13 @@
   },
   "globals": {
     "process": true,
-    "__dirname": false
+    "__dirname": true,
+    "describe": true,
+    "it": true,
+    "after": true,
+    "before": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "done": true
   }
 }
